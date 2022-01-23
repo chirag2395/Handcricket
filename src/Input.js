@@ -5,7 +5,6 @@ import TextField from "@mui/material/TextField";
 export default function Inputs(props) {
   return (
     <Box
-      component="form"
       sx={{
         "& > :not(style)": { m: 1, width: "25ch" },
       }}
@@ -15,9 +14,8 @@ export default function Inputs(props) {
       <TextField
         id="outlined-basic"
         variant="outlined"
-        placeholder={props.placeholder}
-        type={props.type}
-        onChange={props.onChange}
+        {...props}
+        value={props.value ? props.value : ""}
       />
     </Box>
   );
